@@ -38,3 +38,22 @@ SELECT
   GROUP BY descUF
   ORDER BY COUNT(DISTINCT idClienteUnico) 
 
+
+-- COMMAND ----------
+
+WITH tb_estados AS (
+
+SELECT descUF
+FROM silver_olist.cliente
+GROUP BY descUF
+ORDER BY COUNT(DISTINCT idClienteUnico) DESC
+
+LIMIT 2
+)
+
+SELECT * FROM tb_estados
+
+-- COMMAND ----------
+
+
+
